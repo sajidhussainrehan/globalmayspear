@@ -1,26 +1,12 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://www.mayspear.com/$1",
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "mayspearglobal.com"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "destination": "https://www.mayspear.com/$1",
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "www.mayspearglobal.com"
-        }
-      ]
+      "destination": "/index.html"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "npm install"
 }

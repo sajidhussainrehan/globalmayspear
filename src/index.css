@@ -1,0 +1,478 @@
+@import "tailwindcss";
+
+:root {
+  /* Mountstreet Dark Theme Colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-card: #1a1a1a;
+  --color-bg-hover: #222222;
+  --color-border: #2a2a2a;
+  --color-border-light: #333333;
+  --color-accent: #c6a43f;
+  --color-accent-hover: #d4b75a;
+  --color-accent-dark: #a88a2f;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Typography Scale - Mountstreet Style */
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+}
+
+/* ============================================
+   MOUNTSTREET BUTTON SYSTEM
+   ============================================ */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 14px 32px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+}
+
+
+
+.btn-primary:hover {
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-primary);
+  padding: 14px 32px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-text-primary);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-secondary:hover {
+  color: var(--color-bg-primary);
+  border-color: var(--color-text-primary);
+}
+
+.btn-secondary:hover::before {
+  left: 0;
+}
+
+/* ============================================
+   CARD SYSTEM
+   ============================================ */
+
+.card-dark {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+}
+
+.card-dark:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(198, 164, 63, 0.15);
+}
+
+/* ============================================
+   NAVIGATION SYSTEM
+   ============================================ */
+
+.nav-transparent {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+.nav-scrolled {
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   SECTION BACKGROUNDS
+   ============================================ */
+
+.section-dark {
+  background-color: var(--color-bg-primary);
+}
+
+.section-dark-alt {
+  background-color: var(--color-bg-secondary);
+}
+
+/* ============================================
+   TEXT UTILITIES
+   ============================================ */
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(198, 164, 63, 0.3);
+}
+
+.hover-border-gold {
+  transition: border-color 0.3s ease;
+}
+
+.hover-border-gold:hover {
+  border-color: var(--color-accent);
+}
+
+/* ============================================
+   ACCENT UNDERLINE
+   ============================================ */
+
+.accent-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.accent-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+
+.divider-gold {
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin: 24px 0;
+}
+
+.divider-thin {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 32px 0;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+input,
+textarea,
+select {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 12px 16px;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 24px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   ============================================ */
+
+.gradient-overlay {
+  background: linear-gradient(180deg, transparent 0%, var(--color-bg-primary) 100%);
+}
+
+.gradient-radial {
+  background: radial-gradient(ellipse at center, rgba(198, 164, 63, 0.1) 0%, transparent 70%);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: rgba(198, 164, 63, 0.1);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+/* ============================================
+   IMAGE HOVER EFFECTS
+   ============================================ */
+
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   ICON STYLES
+   ============================================ */
+
+.icon-gold {
+  color: var(--color-accent);
+}
+
+.icon-hover-gold {
+  transition: color 0.3s ease;
+}
+
+.icon-hover-gold:hover {
+  color: var(--color-accent);
+}
