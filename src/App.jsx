@@ -437,9 +437,9 @@ export default function MayspearGlobal() {
       {/* Hero */}
       <section id="mg-hero">
         <div className="mg-hero-l">
-          <div className="mg-hero-institution">Infrastructure Capital &amp; Special Situations Institution</div>
+          <div className="mg-hero-institution">Infrastructure Investment Platform
+Origination, Structuring, and Deployment of Private Credit and Special Situations Capital.</div>
           <h1 className="mg-h1">Capital<br/><em>structured.</em><br/>Situations<br/>resolved.</h1>
-          <p className="mg-hero-tagline">Mayspear Global. Berkeley Square, London.</p>
           <p className="mg-hero-lead">We originate, structure, and execute <strong>large-scale cross-border transactions</strong> across infrastructure, private credit, energy systems, real assets, and special situations. We deploy proprietary balance sheet capital alongside institutional partners and take <strong>direct positions</strong> in selected transactions we originate.</p>
           <div className="mg-hero-btns">
             <a href="#contact" className="mg-btn-primary" onClick={e => { e.preventDefault(); scrollTo("contact"); }}>Begin a Conversation</a>
