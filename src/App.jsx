@@ -504,7 +504,7 @@ Origination, Structuring, and Deployment of Private Credit and Special Situation
         </div>
       </div>
 
-      {/* Capital Architecture */}
+      {/* Capital Architectufre */}
       <section className="mg-sec" id="capital">
         <div className="mg-cont">
           <div className="mg-rv">
