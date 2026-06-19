@@ -336,7 +336,6 @@ const CREDENTIALS = [
   "Specialist in cross-border infrastructure capital structuring and private credit for large-scale emerging and frontier market transactions",
   "Institutional relationships spanning sovereign wealth funds, development finance institutions, pension funds, and private credit managers across GCC, Africa, LATAM, and Asia",
   "Proprietary capital access for transactions of £10 million and above, deployed alongside institutional co-investors from a single mandate framework",
-  "Founding principal of Sandspire Global, the private credit operating infrastructure platform, and Branksa, the enterprise AI governance institution",
   "Headquartered at Berkeley Square House, London, operating a global origination and capital execution mandate across 25 markets",
 ];
 
